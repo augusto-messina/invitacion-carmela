@@ -545,6 +545,14 @@
                                             ✉️</td>
                                         <td style="padding: 1rem; vertical-align: middle;">Lluvia de sobres</td>
                                     </tr>
+                                                                        <tr style="background-color: rgba(255,255,255,0.9);">
+                                        <td
+                                            style="padding: 1rem; font-size: 2.5rem; text-align: center; vertical-align: middle;">
+                                            💜</td>
+                                        <td style="padding: 1rem; vertical-align: middle;"><strong>Nos reservamos el
+                                                color <span
+                                                    style="color: #996d97;font-size: 1.3rem;">Lila</span></strong></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -561,27 +569,93 @@
 </a>
 
 <p>Recuerda indicarnos si asistís con acompañante.</p>
+<div class="space40px"></div>
+<div class="space40px"></div>
 
-                        <div class="space40px"></div>
-                        <div class="space40px"></div>
+<section id="musica-xv" style="text-align:center; padding: 30px 15px;">
 
-                        <h2 class="subtitle" data-aos="fade-up" data-aos-easing="linear">Con cariño de mi madre</h2>
-                        <p class="h2 subtitle" data-aos="fade-up" data-aos-easing="linear">
-                            <strong style="font-size: 1.4em;">Cristina Barbosa</strong><br>
-                            <a href="#" target="_blank"
-                                style="color: #132411; font-size: 1.25rem; font-weight: 900; margin-top: 0.5rem; display: inline-block; vertical-align: middle; text-align: center; padding: 10px;">
-                                <i class="fab fa-instagram"></i> @Cristana
-                            </a>
-                        </p>
-                    </div>
+    <h2 class="subtitle" data-aos="fade-up" style="font-size: 2rem;">
+        🎶 ¡Armá la playlist del XV!
+    </h2>
 
+    <p class="h2 subtitle" data-aos="fade-up" style="margin-bottom: 20px;">
+        Sumá tu canción favorita para que explotemos la pista 💃🕺
+    </p>
 
-
-                </div>
-            </div>
-        </section>
-        <!-- End RSVP Content -->
+    <!-- BOTÓN SPOTIFY -->
+    <div data-aos="zoom-in">
+        <a href="https://open.spotify.com/playlist/2QuGQi6bikARCDPXmilAOL?si=_GPmCslxQA2CXkQjeb3XaA&pi=Grjn-dMsRlSGK&pt=124b311f653c89ffab7e49b21079836a" target="_blank"
+            style="display: inline-block;
+                   background: linear-gradient(135deg, #1DB954, #1ed760);
+                   color: white;
+                   padding: 15px 30px;
+                   border-radius: 40px;
+                   font-size: 1.2rem;
+                   font-weight: bold;
+                   text-decoration: none;
+                   box-shadow: 0px 6px 20px rgba(0,0,0,0.3);
+                   transition: 0.3s;">
+            🎧 Agregar música en Spotify
+        </a>
     </div>
+
+    <p style="margin-top: 15px; font-size: 0.95rem; color: #666;">
+        (Podés agregar todos los temas que quieras 😉)
+    </p>
+
+    <!-- DIVISOR -->
+    <div style="margin: 30px auto; width: 60px; height: 3px; background: #ccc;"></div>
+
+    <!-- OPCIÓN ALTERNATIVA -->
+    <h3 style="font-size: 1.3rem;">¿No tenés Spotify?</h3>
+    <p style="font-size: 0.95rem; color: #666;">Dejanos tu canción acá 👇</p>
+
+    <div style="max-width: 400px; margin: 0 auto;">
+
+        <input type="text" id="nombre"
+            placeholder="Tu nombre (opcional)"
+            style="width:100%; padding:10px; margin:8px 0; border-radius:10px; border:1px solid #ccc;">
+
+        <input type="text" id="cancion"
+            placeholder="Canción + artista"
+            style="width:100%; padding:10px; margin:8px 0; border-radius:10px; border:1px solid #ccc;">
+
+        <button onclick="enviarWhatsApp()"
+            style="width:100%;
+                   padding:12px;
+                   background:#132411;
+                   color:white;
+                   border:none;
+                   border-radius:10px;
+                   font-weight:bold;
+                   cursor:pointer;">
+            Enviar sugerencia 🎉
+        </button>
+
+    </div>
+
+</section>
+
+<script>
+function enviarWhatsApp() {
+    const nombre = document.getElementById("nombre").value;
+    const cancion = document.getElementById("cancion").value;
+
+    if (cancion.trim() === "") {
+        alert("Escribí una canción 😊");
+        return;
+    }
+
+    let mensaje = "Hola! Quiero sugerir esta canción para el XV 🎉:%0A";
+    if (nombre) mensaje += "Nombre: " + nombre + "%0A";
+    mensaje += "Canción: " + cancion;
+
+    // 👉 CAMBIÁ ESTE NÚMERO POR EL TUYO
+    let telefono = "549XXXXXXXXXX";
+
+    window.open(`https://wa.me/${telefono}?text=${mensaje}`, "_blank");
+}
+</script>
     <!-- End Main Content -->
 
     <!-- Scripts -->
