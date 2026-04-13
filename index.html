@@ -215,20 +215,23 @@
                         </li>
                     </ul>
                     <div class="spasi"></div>
-                    <script type="text/javascript">
-                        var harih = '04/25/2026 21:00:00'; // Fecha y hora del evento
+<script type="text/javascript">
+    var harih = '04/25/2026 21:00:00'; // Fecha y hora del evento
 
+    $('#hitungmundur').countdown({
+        date: harih, // Formato MM/DD/YYYY HH:MM:SS
+        offset: -3, // Ajusta este valor si deseas modificar la zona horaria
+        day: 'Día',
+        days: 'Días'
+    }, function () {
 
+        // Espera suave antes de mostrar
+        setTimeout(function () {
+            document.getElementById("confirmModal").classList.add("is-active");
+        }, 1000);
 
-                        $('#hitungmundur').countdown({
-                            date: harih, // Formato MM/DD/YYYY HH:MM:SS
-                            offset: -3, // Ajusta este valor si deseas modificar la zona horaria
-                            day: 'Día',
-                            days: 'Días'
-                        }, function () {
-                            alert('¡Es hora de celebrar!');
-                        });
-                    </script>
+    });
+</script>
                 </div>
                 <!-- End Countdown -->
             </div>
